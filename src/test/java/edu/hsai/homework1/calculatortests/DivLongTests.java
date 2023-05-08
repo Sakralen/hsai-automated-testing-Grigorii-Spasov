@@ -8,13 +8,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class DivLongTests extends CalculatorTests {
     @ParameterizedTest
-    @ValueSource(ints = {0, -1, 1, 12345, -12345})
+    @ValueSource(longs = {0, -1, 1, 12345, -12345})
     void testDivisionByZero(long input) {
         assertThrows(NumberFormatException.class, () -> calculator.div(input, 0));
     }
 
     @ParameterizedTest
-    @ValueSource(ints = {0, -1, 1, 12345, -12345})
+    @ValueSource(longs = {0, -1, 1, 12345, -12345})
     void testDivisionByOne(long input) {
         assertEquals(input, calculator.div(input, 1));
     }
