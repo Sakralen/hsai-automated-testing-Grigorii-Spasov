@@ -1,4 +1,5 @@
 package edu.hsai.homework2;
 
-public class Task1Test {
+public class Task1Test extends DriverSetup {
+
 }
