@@ -24,6 +24,7 @@ public class HeaderSection {
     public void clickServiceDropDown() {
         serviceDropDown.click();
     }
+
     public void clickDifferentElement() {
         differentElements.click();
     }

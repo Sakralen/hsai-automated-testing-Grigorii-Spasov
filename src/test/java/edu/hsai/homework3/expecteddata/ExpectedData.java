@@ -20,5 +20,5 @@ public class ExpectedData {
 
     public static final List<String> DIFFERENT_ELEMENTS_LOGS =
             List.of("Colors: value changed to Yellow", "metal: value changed to Selen",
-            "Wind: condition changed to true", "Water: condition changed to true");
+                    "Wind: condition changed to true", "Water: condition changed to true");
 }
