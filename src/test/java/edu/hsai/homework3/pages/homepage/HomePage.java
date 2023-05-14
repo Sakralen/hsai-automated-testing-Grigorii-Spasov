@@ -1,6 +1,8 @@
 package edu.hsai.homework3.pages.homepage;
 
 import edu.hsai.homework3.pages.homepage.elements.HeaderSection;
+import edu.hsai.homework3.pages.homepage.elements.IFrame;
+import edu.hsai.homework3.pages.homepage.elements.LeftSection;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,6 +15,7 @@ public class HomePage {
     private final WebDriver driver;
 
     private final HeaderSection headerSection;
+    private final LeftSection leftSection;
 
     @FindBy(id = "name")
     private WebElement loginName;
@@ -35,6 +38,9 @@ public class HomePage {
     @FindBy(className = "benefit-txt")
     private List<WebElement> benefitIconsTexts;
 
+    @FindBy(tagName = "iframe")
+    private WebElement frame;
+
     public HomePage(WebDriver driver, String url) {
         this.driver = driver;
 
@@ -44,6 +50,7 @@ public class HomePage {
         PageFactory.initElements(this.driver, this);
 
         headerSection = new HeaderSection(driver);
+        leftSection = new LeftSection(driver);
     }
 
     public void performLogin(String loginName, String password) {
@@ -79,5 +86,21 @@ public class HomePage {
 
     public List<String> getBenefitIconsTextsStrings() {
         return benefitIconsTexts.stream().map(WebElement::getText).toList();
+    }
+
+    public LeftSection getLeftSection() {
+        return leftSection;
+    }
+
+    public WebElement getFrame() {
+        return frame;
+    }
+
+    public WebElement getFrameButton() {
+        return new IFrame(driver).getFrameButton();
+    }
+
+    public void switchToOriginalWindow() {
+        driver.switchTo().defaultContent();
     }
 }

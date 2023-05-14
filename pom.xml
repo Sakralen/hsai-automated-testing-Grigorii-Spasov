@@ -14,17 +14,17 @@
     <maven.compiler.target>1.17</maven.compiler.target>
   </properties>
 
-<!--  <profiles>-->
-<!--    <profile>-->
-<!--      <id>suite-for-hw2</id>-->
-<!--      <properties>-->
-<!--        <testng.suite.file>${project.build.testOutputDirectory}/suite-for-hw2.xml</testng.suite.file>-->
-<!--      </properties>-->
-<!--      <activation>-->
-<!--        <activeByDefault>true</activeByDefault>-->
-<!--      </activation>-->
-<!--    </profile>-->
-<!--  </profiles>-->
+  <profiles>
+    <profile>
+      <id>suite-for-hw3</id>
+      <properties>
+        <testng.suite.file>${project.build.testOutputDirectory}/suite-for-hw3.xml</testng.suite.file>
+      </properties>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+    </profile>
+  </profiles>
 
   <dependencies>
     <dependency>

@@ -11,8 +11,21 @@ public class HeaderSection {
     @FindBy(css = "body > header > div > nav > ul.uui-navigation.nav.navbar-nav.m-l8 > li")
     private List<WebElement> items;
 
+    @FindBy(css = "body > header > div > nav > ul.uui-navigation.nav.navbar-nav.m-l8 > li > a > span")
+    private WebElement serviceDropDown;
+
+    @FindBy(css = "body > header > div > nav > ul.uui-navigation.nav.navbar-nav.m-l8 > li.dropdown.open > ul > li:nth-child(8) > a")
+    private WebElement differentElements;
+
     public HeaderSection(WebDriver driver) {
         PageFactory.initElements(driver, this);
+    }
+
+    public void clickServiceDropDown() {
+        serviceDropDown.click();
+    }
+    public void clickDifferentElement() {
+        differentElements.click();
     }
 
     public List<WebElement> getItems() {

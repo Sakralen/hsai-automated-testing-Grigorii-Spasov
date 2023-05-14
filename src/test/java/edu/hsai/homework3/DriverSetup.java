@@ -1,6 +1,8 @@
 package edu.hsai.homework3;
 
+import edu.hsai.homework3.pages.differnetelementspage.DifferentElementsPage;
 import edu.hsai.homework3.pages.homepage.HomePage;
+import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
@@ -13,6 +15,7 @@ import java.util.Properties;
 
 public class DriverSetup {
     protected static WebDriver driver;
+
     protected static HomePage homePage;
 
     @BeforeTest
