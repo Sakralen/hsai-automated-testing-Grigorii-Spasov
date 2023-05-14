@@ -46,18 +46,6 @@ public class DifferentElementsPage {
                 .forEach(WebElement::click);
     }
 
-    public List<WebElement> getCheckboxes() {
-        return checkboxes;
-    }
-
-    public List<WebElement> getRadios() {
-        return radios;
-    }
-
-    public List<WebElement> getDropdownOptions() {
-        return dropdownOptions;
-    }
-
     public List<String> getLogs() {
         return Arrays.stream(logs.getText().split("\n"))
                 .map(log -> log.substring(LOGS_BEGIN_INDEX)).toList();
