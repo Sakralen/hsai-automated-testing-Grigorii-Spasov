@@ -6,7 +6,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class DivLongTests extends CalculatorTests {
+class DivLongTests extends CalculatorTests {
     @ParameterizedTest
     @ValueSource(longs = {0, -1, 1, 12345, -12345})
     void testDivisionByZero(long input) {

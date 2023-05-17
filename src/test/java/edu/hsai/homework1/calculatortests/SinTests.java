@@ -5,7 +5,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class SinTests extends CalculatorTests {
+class SinTests extends CalculatorTests {
     @ParameterizedTest
     @CsvSource({"0, 0", "0.5, 0.52", "0.7, 0.79", "0.87, 1.05", "1, 1.57", "0, 3.14", "-1, 4.71"})
     void testTableValues(double expected, double input) {

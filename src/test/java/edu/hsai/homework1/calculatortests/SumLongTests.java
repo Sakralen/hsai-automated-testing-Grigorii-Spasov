@@ -5,7 +5,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class SumLongTests extends CalculatorTests {
+class SumLongTests extends CalculatorTests {
     @ParameterizedTest
     @CsvSource({"1, -1, 2", "-1, 1, -2"})
     void testSignChangeOverZero(long expected, long a, long b) {

@@ -6,7 +6,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class TanTests extends CalculatorTests {
+class TanTests extends CalculatorTests {
     @ParameterizedTest
     @CsvSource({"0, 0", "0.57, 0.52", "1, 0.79", "1.73, 1.05"})
     void testTableValues(double expected, double input) {
