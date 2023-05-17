@@ -23,7 +23,8 @@ public class Task1Test extends DriverSetup {
                 .findElement(By.cssSelector("ul.uui-navigation.nav.navbar-nav.m-l8"))
                 .findElements(By.xpath("./child::*"));
 
-        softAssert.assertEquals(headerItems.size(), 4);
+        final int EXPECTED_HEADER_ITEMS_SIZE = 4;
+        softAssert.assertEquals(headerItems.size(), EXPECTED_HEADER_ITEMS_SIZE);
 
         headerItems.forEach(item -> softAssert.assertTrue(item.isDisplayed()));
 
@@ -33,22 +34,33 @@ public class Task1Test extends DriverSetup {
         // 6. Assert that there are 4 images on the Index Page, and they are displayed
         var benefitImages = driver.findElements(By.className("benefit-icon"));
 
-        softAssert.assertEquals(benefitImages.size(), 4);
+        final int EXPECTED_BENEFIT_IMAGES_SIZE = 4;
+        softAssert.assertEquals(benefitImages.size(), EXPECTED_BENEFIT_IMAGES_SIZE);
 
         benefitImages.forEach(image -> softAssert.assertTrue(image.isDisplayed()));
 
         // 7. Assert that there are 4 texts on the Index Page under icons, and they have proper text
         var benefitTexts = driver.findElements(By.className("benefit-txt"));
 
-        softAssert.assertEquals(benefitTexts.size(), 4);
+        final int EXPECTED_BENEFIT_TEXTS_SIZE = 4;
+        softAssert.assertEquals(benefitTexts.size(), EXPECTED_BENEFIT_TEXTS_SIZE);
 
         benefitTexts.forEach(image -> softAssert.assertTrue(image.isDisplayed()));
 
         softAssert.assertEquals(benefitTexts.stream().map(WebElement::getText).toList(),
-                List.of("To include good practices\nand ideas from successful\nEPAM project",
-                        "To be flexible and\ncustomizable", "To be multiplatform",
-                        "Already have good base\n(about 20 internal and\n" +
-                                "some external projects),\nwish to get more…"));
+                List.of("""
+                                To include good practices
+                                and ideas from successful
+                                EPAM project""",
+                        """
+                                To be flexible and
+                                customizable""",
+                        "To be multiplatform",
+                        """
+                                Already have good base
+                                (about 20 internal and
+                                some external projects),
+                                wish to get more…"""));
 
         // 8. Assert that there is the iframe with “Frame Button” exist
         softAssert.assertEquals(driver.findElement(By.tagName("iframe")).getAttribute("src"),

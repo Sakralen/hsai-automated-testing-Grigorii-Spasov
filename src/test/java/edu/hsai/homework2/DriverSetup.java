@@ -21,7 +21,7 @@ public class DriverSetup {
         driver.navigate().to("https://jdi-testing.github.io/jdi-light/index.html");
 
         // 3. Perform login
-        driver.findElements(By.className("dropdown-toggle")).get(1).click();
+        driver.findElement(By.cssSelector("html > body > header > div > nav > ul.uui-navigation.navbar-nav.navbar-right > li > a > span")).click();
         driver.findElement(By.id("name")).sendKeys("Roman");
         driver.findElement(By.id("password")).sendKeys("Jdi1234");
         driver.findElement(By.id("login-button")).click();

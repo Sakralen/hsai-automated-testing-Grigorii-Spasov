@@ -25,7 +25,7 @@ public class Task2Test extends DriverSetup {
     @Test
     public void testElements() {
         // 5. Open through the header menu Service -> Different Elements Page
-        driver.findElements(By.className("dropdown-toggle")).get(0).click();
+        driver.findElement(By.cssSelector("body > header > div > nav > ul.uui-navigation.nav.navbar-nav.m-l8 > li > a > span")).click();
         driver.findElement(By.xpath("/html/body/header/div/nav/ul[1]/li[3]/ul/li[8]/a")).click();
 
         // 6. Select checkboxes
@@ -44,8 +44,10 @@ public class Task2Test extends DriverSetup {
                 .forEach(WebElement::click);
 
         // 9. Assert logs
+        final int LOGS_BEGIN_INDEX = 9;
+
         var logLines = Arrays.stream(driver.findElement(By.cssSelector("ul.panel-body-list.logs")).getText()
-                .split("\n")).map(line -> line.substring(9)).toList();
+                .split("\n")).map(line -> line.substring(LOGS_BEGIN_INDEX)).toList();
 
         assertEquals(logLines, List.of("Colors: value changed to Yellow", "metal: value changed to Selen",
                 "Wind: condition changed to true", "Water: condition changed to true"));
