@@ -1,8 +1,8 @@
-package edu.hsai.homework3.pages.homepage;
+package edu.hsai.homework4.pages.homepage;
 
-import edu.hsai.homework3.pages.homepage.elements.HeaderSection;
-import edu.hsai.homework3.pages.homepage.elements.IFrame;
-import edu.hsai.homework3.pages.homepage.elements.LeftSection;
+import edu.hsai.homework4.pages.homepage.elements.HeaderSection;
+import edu.hsai.homework4.pages.homepage.elements.IFrame;
+import edu.hsai.homework4.pages.homepage.elements.LeftSection;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,9 +10,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
+import java.util.Properties;
 
 public class HomePage {
-    private final WebDriver driver;
+    private static WebDriver driver;
+    private static Properties properties;
 
     private final HeaderSection headerSection;
     private final LeftSection leftSection;
@@ -41,22 +43,22 @@ public class HomePage {
     @FindBy(tagName = "iframe")
     private WebElement frame;
 
-    public HomePage(WebDriver driver, String url) {
-        this.driver = driver;
+    public HomePage(WebDriver driver, Properties properties) {
+        HomePage.driver = driver;
+        HomePage.properties = properties;
 
-        // 1. Open test site by URL
-        driver.navigate().to(url);
+        driver.navigate().to(properties.getProperty("site.url"));
 
-        PageFactory.initElements(this.driver, this);
+        PageFactory.initElements(driver, this);
 
         headerSection = new HeaderSection(driver);
         leftSection = new LeftSection(driver);
     }
 
-    public void performLogin(String loginName, String password) {
+    public void performLogin() {
         loginDropDownButton.click();
-        this.loginName.sendKeys(loginName);
-        this.password.sendKeys(password);
+        this.loginName.sendKeys(properties.getProperty("user.name"));
+        this.password.sendKeys(properties.getProperty("user.password"));
         loginButton.click();
     }
 

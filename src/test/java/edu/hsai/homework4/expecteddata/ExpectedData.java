@@ -1,9 +1,9 @@
-package edu.hsai.homework3.expecteddata;
+package edu.hsai.homework4.expecteddata;
 
 import java.util.List;
 
 public class ExpectedData {
-    public static final String SITE_NAME = "Home Page";
+    public static final String HOME_PAGE_TITLE = "Home Page";
     public static final String LOGGED_USER_NAME = "ROMAN IOVLEV";
     public static final int HEADER_SECTION_ITEMS_SIZE = 4;
     public static final List<String> HEADER_SECTION_ITEMS_NAMES =

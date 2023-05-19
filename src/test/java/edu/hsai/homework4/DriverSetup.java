@@ -1,8 +1,7 @@
-package edu.hsai.homework3;
+package edu.hsai.homework4;
 
-import edu.hsai.homework3.pages.differnetelementspage.DifferentElementsPage;
-import edu.hsai.homework3.pages.homepage.HomePage;
-import org.junit.jupiter.api.BeforeAll;
+import edu.hsai.homework4.steps.Action;
+import edu.hsai.homework4.steps.Assertion;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
@@ -16,7 +15,8 @@ import java.util.Properties;
 public class DriverSetup {
     protected static WebDriver driver;
 
-    protected static HomePage homePage;
+    protected static Action action;
+    protected static Assertion assertion;
 
     @BeforeTest
     public static void setup() {
@@ -33,10 +33,8 @@ public class DriverSetup {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
 
-        homePage = new HomePage(driver, properties.getProperty("site.url"));
-
-        // 3. Perform login
-        homePage.performLogin(properties.getProperty("user.name"), properties.getProperty("user.password"));
+        action = new Action(driver, properties);
+        assertion = new Assertion(driver, properties);
     }
 
     @AfterTest
