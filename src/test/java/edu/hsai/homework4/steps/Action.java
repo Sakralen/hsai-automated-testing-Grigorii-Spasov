@@ -1,10 +1,13 @@
 package edu.hsai.homework4.steps;
 
+import edu.hsai.homework4.pages.differnetelementspage.DifferentElementsPage;
 import edu.hsai.homework4.pages.homepage.HomePage;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 
+import java.lang.reflect.Array;
 import java.util.Properties;
+import java.util.stream.Stream;
 
 public class Action extends StepsSetup {
     public Action(WebDriver driver, Properties properties) {
@@ -24,5 +27,25 @@ public class Action extends StepsSetup {
     @Step("Switching to the original window")
     public void switchToOriginalWindow() {
         homePage.switchToOriginalWindow();
+    }
+
+    @Step("Navigating to Different Elements page")
+    public void navigateToDifferentElementsPage() {
+        differentElements = new DifferentElementsPage(driver, homePage);
+    }
+
+    @Step("Selecting checkboxes")
+    public void selectCheckboxes(String... names) {
+        Stream.of(names).forEach(name -> differentElements.selectCheckbox(name));
+    }
+
+    @Step("Selecting radio")
+    public void selectRadio(String name) {
+        differentElements.selectRadio(name);
+    }
+
+    @Step("Selecting dropdown option")
+    public void selectDropdownOption(String name) {
+        differentElements.selectDropdownOption(name);
     }
 }

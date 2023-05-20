@@ -8,14 +8,8 @@ class Task1Test extends DriverSetup {
     @Test
     @Story("Testing the Home Page")
     public void testTask1() {
-        // 1. Open test site by URL
-        action.navigateToHomePage();
-
         // 2. Assert browser title
         assertion.assertHomePageTitle(ExpectedData.HOME_PAGE_TITLE);
-
-        // 3. Perform login
-        action.performLogin();
 
         // 4. Assert Username is loggined
         assertion.assertUsernameIsLoggined(ExpectedData.LOGGED_USER_NAME);

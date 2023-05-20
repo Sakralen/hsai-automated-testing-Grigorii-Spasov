@@ -86,4 +86,9 @@ public class Assertion extends StepsSetup {
 
         softAssert.assertAll();
     }
+
+    @Step("Asserting logs")
+    public void assertLogs(List<String> logs) {
+        assertEquals(differentElements.getLogs(), logs);
+    }
 }
