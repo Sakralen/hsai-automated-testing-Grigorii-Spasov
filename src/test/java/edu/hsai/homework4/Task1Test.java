@@ -1,9 +1,11 @@
 package edu.hsai.homework4;
 
 import edu.hsai.homework4.expecteddata.ExpectedData;
+import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import org.testng.annotations.Test;
 
+@Feature("First task using Steps")
 class Task1Test extends DriverSetup {
     @Test
     @Story("Testing the Home Page")

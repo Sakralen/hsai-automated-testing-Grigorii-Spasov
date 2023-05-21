@@ -2,9 +2,11 @@ package edu.hsai.homework4;
 
 import edu.hsai.homework4.expecteddata.ExpectedData;
 
+import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import org.testng.annotations.Test;
 
+@Feature("Second task using Steps")
 class Task2Test extends DriverSetup {
     @Test
     @Story("Testing the Different Elements page")
