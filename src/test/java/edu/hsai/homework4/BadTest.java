@@ -12,10 +12,10 @@ public class BadTest extends DriverSetup {
         SoftAssert softAssert = new SoftAssert();
 
         // 2. Assert browser title
-        softAssert.assertEquals(homePage.getTitle(), "NOT HOME PAGE");
+        softAssert.assertEquals(homePage.getTitle(), "ETO YA NE DOSTAYU DO POLA NOGAMI");
 
         // 4. Assert Username is loggined
-        softAssert.assertEquals(homePage.getLoggedName(), "ETO YA NE DOSTAYU DO POLA NOGAMI");
+        softAssert.assertEquals(homePage.getLoggedName(), "ILI POL DO MOIKH NOG NE DOSTAYOOOOOT");
 
         // 5. Assert that there are 4 items on the header section are displayed, and they have proper texts
         softAssert.assertEquals(homePage.getHeaderSection().getItemsSize(), ExpectedData.HEADER_SECTION_ITEMS_SIZE);
