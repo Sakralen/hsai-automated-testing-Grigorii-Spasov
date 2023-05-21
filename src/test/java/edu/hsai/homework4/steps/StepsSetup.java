@@ -11,7 +11,7 @@ public class StepsSetup {
     protected static WebDriver driver;
     protected static Properties properties;
 
-    protected static HomePage homePage;
+    public static HomePage homePage; // is public due to usage in BadTest class :(
     protected static DifferentElementsPage differentElements;
 
     public StepsSetup(WebDriver driver, Properties properties) {
